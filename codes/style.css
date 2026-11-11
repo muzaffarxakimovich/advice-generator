@@ -1,0 +1,92 @@
+:root {
+      --bg: hsl(218, 23%, 16%);
+      --card: hsl(217, 19%, 24%);
+      --text: hsl(193, 38%, 86%);
+      --green: hsl(150, 100%, 66%);
+      --line: hsl(217, 19%, 38%);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: var(--bg);
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      max-width: 540px;
+      padding: 48px 48px 64px;
+      background: var(--card);
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, .2);
+    }
+
+    .label {
+      color: var(--green);
+      font-size: 13px;
+      letter-spacing: 4px;
+      margin-bottom: 24px;
+    }
+
+    .quote {
+      color: var(--text);
+      font-size: 28px;
+      line-height: 1.35;
+      margin-bottom: 40px;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+    .pause { display: flex; gap: 6px; }
+    .pause span {
+      width: 5px;
+      height: 16px;
+      background: var(--text);
+      border-radius: 3px;
+    }
+
+    .btn {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 50%);
+      width: 64px;
+      height: 64px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--green);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: box-shadow .25s;
+    }
+    .btn:hover,
+    .btn:focus-visible {
+      box-shadow: 0 0 40px var(--green);
+      outline: none;
+    }
+
+    /* Planshet va telefon */
+    @media (max-width: 600px) {
+      .card { padding: 40px 24px 56px; }
+      .label { font-size: 12px; letter-spacing: 3.5px; }
+      .quote { font-size: 24px; margin-bottom: 32px; }
+      .divider { gap: 16px; }
+    }
